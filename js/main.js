@@ -1,5 +1,7 @@
-$(window).load(function(){
+// I know using jQuery is a little overkill but it's just faster for me.
 
+$(window).load(function(){
+	rainbow.animate();
 });
 
 var color = ['#ff0000','#ff9600','#fff000','#00ff00','#0099ff','#7200ff','#f000ff'];
@@ -20,3 +22,17 @@ var rainbow = {
 	}
 };
 
+function cycleColors(elm) {
+	var elColor = elm.attr('class');
+	var pos = color.indexOf(rainbow[elColor]);
+	var count = pos;
+	function loopIt(){
+		if (count>6){
+			count = 0;
+		}
+		elm.css('background-color', color[count]);
+		count++;
+		setTimeout(loopIt, 200);
+	};
+	loopIt();
+};
