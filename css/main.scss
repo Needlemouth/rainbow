@@ -1,4 +1,5 @@
 $sky-color: #7dc2ee;
+$cloud-color: #ffffff;
 
 * {
 	margin:0;
@@ -155,3 +156,41 @@ $sky-color: #7dc2ee;
 		}
 	}
 }
+
+.cloud {
+	position: absolute;
+	left:60px;
+	top:15px;
+	height: 30px;
+	width: 60px;
+	-moz-border-radius: 30px 30px 0 0;
+	border-radius: 30px 30px 0 0;
+	background:$cloud-color;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 15px;
+		left: 51px;
+		height: 15px;
+		width: 30px;
+		-moz-border-radius: 15px 15px 0 0;
+		border-radius: 15px 15px 0 0;
+		background:$cloud-color;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 8px;
+		left: -29px;
+		height: 22px;
+		width: 44px;
+		-moz-border-radius: 22px 22px 0 0;
+		border-radius: 22px 22px 0 0;
+		background:$cloud-color;
+	}
+}
+
+
+
+
+
